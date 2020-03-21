@@ -23,16 +23,16 @@ public class Main {
             String[] values = dictionary.get(key);
             dictionaryBig.put(key, values);
             for (int i =0; i<values.length;i++) {
-                String budushiyKlyuch = values[i];
+                String futureKey = values[i];
                 ArrayList<String> strArr = new ArrayList<>(values.length);
                 strArr.addAll(Arrays.asList(values));
-                strArr.remove(budushiyKlyuch);
+                strArr.remove(futureKey);
                 strArr.add(key);
-                String[] newVals = new String[strArr.size()];
-                newVals = strArr.toArray(newVals);
-                System.out.println(budushiyKlyuch
-                    + " - " + Arrays.toString(newVals));
-                dictionaryBig.put(budushiyKlyuch, newVals);
+                String[] newValues = new String[strArr.size()];
+                newValues = strArr.toArray(newValues);
+                System.out.println(futureKey
+                    + " - " + Arrays.toString(newValues));
+                dictionaryBig.put(futureKey, newValues);
             }
         }
 
@@ -41,10 +41,10 @@ public class Main {
         String sentences = sc.nextLine();
         String[] words = sentences.split(" ");
         for (String word : words) {
-            String[] rephrases = dictionaryBig.get(word);
+            String[] sinonims = dictionaryBig.get(word);
             Random r = new Random();
-            if (rephrases != null) {
-                System.out.printf(" " + rephrases[r.nextInt(rephrases.length - 1)]);
+            if (sinonims != null) {
+                System.out.printf(" " + sinonims[r.nextInt(sinonims.length - 1)]);
             } else {
                 System.out.printf(" ТАКОГО СЛОВА НЕТ");
             }
