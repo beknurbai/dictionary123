@@ -30,6 +30,8 @@ public class Main {
                 strArr.add(key);
                 String[] newVals = new String[strArr.size()];
                 newVals = strArr.toArray(newVals);
+                System.out.println(budushiyKlyuch
+                    + " - " + Arrays.toString(newVals));
                 dictionaryBig.put(budushiyKlyuch, newVals);
             }
         }
